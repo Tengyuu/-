@@ -1,0 +1,25 @@
+﻿
+
+<h1>Text</h1>
+<form method="post">
+    <p>輸入6位數<input type="text" name="s" value="@ViewBag.S" maxlength="6" pattern="[1-6]+" required/></p>
+    <button>確認</button>
+</form>
+
+@{
+    if (!string.IsNullOrEmpty(ViewBag.S))
+    {
+        List<string> images = new List<string>();
+        foreach(var c in ViewBag.S)
+        {
+            int diceNum = int.Parse(c.ToString());
+            string Path = $"/images/Dice/dice{diceNum}.jpg";
+            images.Add(Path);
+        }
+
+        foreach(var img in images)
+        {
+            <img src ="@img" style="margin-top:10px;width:100px;height:100px"/>
+        }
+    }
+}

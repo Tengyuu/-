@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["title"] = "HW1";
+}
+
+<h1>Text</h1>
+<form method="post">
+    <p>ROWS:<input type="text" name="rows" value="@ViewBag.Rows"/></p>
+    <p>COLS:<input type="text" name="cols" value="@ViewBag.Cols" /></p>
+    <p>TEXT:<input type="text" name="text" value="@ViewBag.Text" /></p>
+    <button type="submit">確定</button>
+</form>
+
+@{
+    string rows = ViewBag.Rows;
+    string cols = ViewBag.Cols;
+    string text = ViewBag.Text;
+    if (!string.IsNullOrEmpty(rows) && !string.IsNullOrEmpty(cols) && !string.IsNullOrEmpty(text))
+    {
+        <table style="margin-top:10px">
+            @for(int i = 0; i < int.Parse(rows); i++)
+            {
+                string str = (i % 2 == 0) ? "lightpink" : "#edf8cf";
+                <tr style="background-color:@str">
+                    @for(int j = 0; j < int.Parse(cols); j++)
+                    {
+                        <td style="border:1px solid black">@text</td>
+                    }
+                </tr>
+            }
+        </table>
+    }
+
+
+   
+}

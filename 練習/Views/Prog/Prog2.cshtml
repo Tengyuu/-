@@ -1,0 +1,52 @@
+﻿
+@{
+	ViewData["title"] = "HW2";
+}
+<h1>Text</h1>
+<form method="post">
+	<p>輸入6位數:<input type="text" name="input" value="@ViewBag.Input"/></p>
+	<button>確認</button>
+</form>
+
+@{
+	string odd = "";string even = "";
+	string Input = ViewBag.Input;
+	if (!string.IsNullOrEmpty(Input))
+	{
+		for (int i = 0; i < Input.Length; i++)
+		{
+			if (i % 2 == 0)
+			{
+				if ((Input[i] - '0') % 2 == 0)
+				{
+					odd += (Input[i] - '0' - 1).ToString() ;
+				}
+				else
+				{
+					odd += Input[i];
+				}
+			}
+			else
+			{
+				if ((Input[i]-'0') % 2 != 0)
+				{
+					even += (Input[i] - '0' - 1).ToString();
+				}
+				else
+				{
+					even += Input[i];
+				}
+
+			}
+			
+		}
+		even = new string(even.Reverse().ToArray());
+		int Sum = int.Parse(odd) + int.Parse(even);
+		<p>@odd</p>
+		<p>@even</p>
+		<p>@Sum</p>
+	}
+	
+	
+}
+
