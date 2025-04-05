@@ -8,11 +8,7 @@ namespace 練習.Controllers
         {
             return View();
         }
-        public IActionResult SimpleCard()
-        {
-            return View();
-        }
-      
+   
         public IActionResult Prog1(string rows,string cols,string text)
         {
             ViewBag.Rows = rows;
