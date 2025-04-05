@@ -25,6 +25,7 @@ namespace 練習.Controllers
         public IActionResult Prog3(string s)
         {
             ViewBag.S = s;
+            ViewBag.S = s;
             return View();
         }
         public IActionResult Prog4()
