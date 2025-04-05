@@ -18,12 +18,13 @@ namespace 練習.Controllers
         }
         public IActionResult Prog2(string input)
         {
-           
+            //eeawewaewaeae
             ViewBag.Input = input;      
             return View();
         }
         public IActionResult Prog3(string s)
         {
+  
             ViewBag.S = s;
             ViewBag.S = s;
             return View();
